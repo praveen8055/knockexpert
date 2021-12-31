@@ -1,0 +1,1012 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+:root {
+  --primaryColor: #fff;
+ 
+}
+
+  html {
+    font-family: Nunito,sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+    
+  
+  
+  body{
+   
+    
+    margin-top:-30px;
+    padding: 0 !important;
+      text-rendering: optimizelegibility;
+      -webkit-font-smoothing: antialiased;
+      background: #fff;
+      font-family: Nunito, sans-serif;
+      overflow: hidden;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+  }
+
+
+  h4{
+    font-size: 24px;
+  }
+  h2{
+    font-size:2.3rem;
+  }
+/* --- Navigation Menu ------------------------------ */
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
+}
+
+
+/* Nav Menu Items */
+navbar,
+navbar ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+navbar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+navbar ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+navbar li a {
+
+  position: relative;
+  top: 45%;
+  z-index: 10;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+.social{
+  
+  display:-webkit-inline-flex;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  
+}
+
+navbar li a:hover {
+  transform: scale(1.2);
+  color:#fff;
+  text-decoration: none;
+}
+
+navbar li a::before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+navbar li a:hover::before {
+    opacity: 1;
+  }
+  navbar li >.social>a::before{
+    width:0px;
+    height:0px;
+  }
+navbar li {
+    background-color: #273036;
+    opacity: 0.7;
+}
+
+
+
+/* Slide in animation with delay for each */
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animation with delay for each */
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1.5rem;
+  right: 3rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  text-transform: uppercase; */
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+
+section#home {
+  /* https://appliancerepairservicemobile.com/upload/landing/b0d/b0dc859b417cb18f3327d32705dcb497.jpg */
+  /* https://7emirate.com/oc-content/uploads/162/21792.jpg */
+  /*/images/homeheader2.png  */
+  /* /images/header1.jpg */
+  color:black;
+  /* https://appliancerepairservicemobile.com/upload/landing/b0d/b0dc859b417cb18f3327d32705dcb497.jpg */
+ /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(" https://appliancerepairservicemobile.com/upload/landing/b0d/b0dc859b417cb18f3327d32705dcb497.jpg ");*/
+   background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
+   url('/images/homeheader2.png ');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  letter-spacing: 0.02em;
+}
+/* <a href='https://www.freepik.com/photos/people'>People photo created by wayhomestudio - www.freepik.com</a> */
+#home{
+  background-color: rgba(0, 0, 0, 0.1);
+  height:100vh;
+  
+  
+  
+}
+
+.ssservices {
+  margin:0;
+  position: fixed;
+  z-index: 4;
+  top: 1rem;
+  left:2rem;
+  
+  font-family:Nunito,
+  sans-serif;
+  text-decoration: none;
+  font-size: 2rem;
+  padding-bottom: 2px;
+  color: black;
+ 
+}
+.ssservices:hover{
+  color:#6ab33e;
+  text-decoration: none;
+}
+.fix-icon{
+  color:#6ab33e;
+  position: fixed;
+  top: 1.4rem;
+  right: 7rem;
+  z-index: 3;
+  display: inline;
+  color:black;
+}
+#navbarbackground{
+  position:fixed;
+  top: 0;
+ 
+  z-index: 3;
+  background-color: white;
+  height:70px;
+  width:100%;
+  opacity:0.3;
+  
+}
+.navcallicon{
+  color:#004D40;
+  opacity:1;
+}
+.fix-icon-item{
+  color:#004D40;
+  opacity:1;
+}
+.fix-icon-item:hover{
+text-decoration: none;
+color:#76ff03;
+}
+.navcallicon:hover{
+color:#76ff03;
+
+}
+.home-text{
+  color:rgb(12, 12, 12);
+  padding-top:150px;
+  padding-left: 25px;
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  
+  opacity:1;
+}
+.button{
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.button1{
+  border-radius: 9999px;
+  font-family: grad, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.button1:hover{
+  text-decoration:none ;
+  opacity:0.7;
+}
+#services{
+  font-family: "Montserrat", sans-serif;
+background-color:#273036;
+text-align: center;
+letter-spacing: 0.03em;
+}
+.services-hedding{
+  font-family: "Roboto", sans-serif;
+  padding-top:30px;
+ 
+  
+}
+.cards{
+  padding:10px;
+  padding-top:50px;
+ color:white;
+  justify-content: center;
+ 
+}
+.card-schedule{
+  padding-top:15px;
+}
+.card-button{
+  border-radius: 9999px;
+  font-family: grad, serif;
+  font-weight: 400;
+  font-style: italic;
+  transform: scale(0.9);
+}
+.card-button:hover{
+  text-decoration: none;
+ transform:scale(1);
+}
+.cards img{
+  display: block;
+  border-radius:3px;
+    width:100%;
+    height: auto;
+  
+}
+.cards img:hover{
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+  transform: scale(1.01);
+}
+.cards h4{
+color:#76ff03;
+}
+#why-us{
+  text-align:center;
+  background-color: rgb(232, 240, 239);
+  color:black;
+  font-family: "Montserrat", sans-serif;
+  font-size:1.2rem;
+  line-height:1.7;
+padding:80px 20px 40px 20px;
+letter-spacing: 0.02em;
+font-weight: 300;
+}
+#why-us h2{
+  font-family: "Roboto", sans-serif;
+ 
+}
+.fontawesome-icon{
+  color:#76ff03;
+}
+.fontawesome-icon:hover{
+  color:black;
+transform: scale(1.2);
+}
+.icon-whyus{
+  padding:60px 30px 10px 30px;
+}
+#About-us{
+  color:white;
+text-align: center;
+background-color: #273036;
+letter-spacing: 0.02em;
+    font-weight: 300;
+}
+.about-us-heading{
+padding:40px 10px 30px 10px;
+}
+#About-us img{
+  width:100%;
+  height:auto;
+}
+.about-us-text{
+ text-align: left;
+ line-height:1.5;
+}
+#brands{
+  
+  letter-spacing: 0.02em;
+  padding:20px;
+color:black;
+text-align:center;
+}
+
+#brands img{
+  width:100%;
+  height:100%;
+  
+
+}
+.about-button{
+  padding:20px;
+}
+
+ .reviews{
+  padding-top:30px;
+  padding-bottom:50px;
+ 
+}
+.reviews>h2{
+  text-align:center;
+  
+  padding-bottom:100px;
+}
+
+.testimonial{
+  
+border-left: 3px solid #6ab33e;
+padding: 50px 0 100px 275px;
+position: relative
+}
+.testimonial:before,
+.testimonial:after{
+content: "";
+width: 320px;
+height: 55px;
+border-right: 3px solid #6ab33e;
+position: absolute;
+left: 0px;
+}
+.testimonial:before{
+border-top: 3px solid #6ab33e;
+top: 0px;
+}
+
+.testimonial:after{
+border-bottom: 3px solid #6ab33e;
+bottom: 0;
+}
+.testimonial .pic{
+width: 100px;
+height: 100px;
+position: absolute;
+top:10px;
+left:10px;
+}
+.testimonial .pic img{
+width: 100%;
+height: auto;
+}
+.testimonial .description{
+font-size: 14px;
+color: #7a7e82;
+line-height: 27px;
+position: relative;
+top:50px;
+left:0px;
+}
+.testimonial .description:before{
+content: "\f10d";
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+position: absolute;
+top:-50px;
+left: 10px;
+font-size: 20px;
+color: #7a7e82;
+}
+.testimonial .testimonial-title{
+font-size: 22px;
+font-weight:800;
+color: #22272c;
+text-transform: capitalize;
+position: absolute;
+top:100px;
+left:10px;
+}
+.testimonial .post{
+display: block;
+font-size: 15px;
+font-weight: 700;
+color :#6ab33e;
+margin-top: 10px;
+}
+.owl-theme .owl-controls{
+text-align: right;
+margin-top: 30px;
+}
+.owl-theme .owl-controls .owl-buttons div{
+background: #6ab33e;
+border-radius: 0;
+opacity: 1;
+padding: 5px 10px;
+}
+.owl-prev:before,
+.owl-next:before{
+content: "\f053";
+font-family: "Font Awesome 5 Free"; font-weight: 900;
+color: #fff;
+}
+.owl-next:before{
+content: "\f054";
+}
+
+#callback{
+  color:#eceff1;
+  text-align:center;
+  display:block;
+  background-image: linear-gradient(to right, #273036,#7a7e82);
+}
+#callback h2{
+  padding:30px;
+}
+.callback{
+  padding-top:50px;
+  padding-bottom:20px;
+}
+
+.contactme{
+  width:300px;
+  height:auto;
+}
+.callbackinput{
+  border:1px solid white;
+ border-radius: 10px;
+}
+.inputfield{
+  color:white;
+ 
+}
+.contactbtn{
+  background-image: linear-gradient(to right, #007da3,#19dfe6);
+  border-radius: 9999px;
+  font-family: grad, serif;
+  font-weight: 400;
+  font-style: italic;
+padding-right: 30px;
+padding-left:40px;  
+transform: scale(0.9);
+
+}
+.contactbtn:hover{
+  text-decoration:none;
+  transform:scale(1);
+}
+.contactmebutton{
+  padding-bottom:50px;
+}
+#contactus{
+  background-color: #273036;
+  padding:100px 20px 70px 20px;
+  text-align: center;
+}
+#contactus i{
+  
+  color:#6ab33e;
+}
+
+.contacticon1{
+  position:relative;
+  
+}
+.contact-item{
+  padding:10px
+}
+.emaillink{
+  color:#6ab33e;
+}
+.emaillink:hover{
+  color:rgb(165, 255, 20);
+  text-decoration: none;
+}
+footer{
+  background-color: rgb(199, 210, 211);
+text-align:center;
+padding:30px 20px 30px 20px;
+}
+.socialmediaicons>i{
+  padding:5px;
+  padding-bottom:10px;
+  
+}
+.socialmediaicons>a{
+  color:black;
+}
+.socialmediaicons>a:hover{
+  color:#6ab33e;
+}
+/* washingmachine booking page */
+#bookingform-header{
+ 
+  
+  height:80vh;
+ 
+
+  color:black;
+  background-size: cover;
+  
+  
+ 
+  
+ 
+  
+}
+.washing-machine-header{
+  background-image:url("https://stylecurator.com.au/wp-content/uploads/2019/11/Grey-and-white-functional-family-laundry-renovation.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -300px; 
+}
+
+ .airconditioner{
+  
+  background-image:url("/images/acopening2.jpg"); 
+  color:black;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -50px;
+ 
+
+  
+}
+.fridge-repair{
+  background-image:url("/images/fridge1.jpg"); 
+  color:black;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position-y: -10px; */
+}
+.dish-washer{
+  /* /images/dishwasherheader.jpg */
+  background-image:url(" /images/dishwasherheader2.jpg "); 
+  color:black;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ovenheader{
+  background-image:url(" /images/ovenheader2.jpg "); 
+  color:black;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bookingform-header h1{
+  padding:250px 5px 50px 20px;
+  
+}
+
+#booking-form{
+  padding:10px 10px 30px 10px;
+  
+  box-shadow: 0 8px 8px 0 rgba(119, 116, 116, 0.2);
+  color:white;
+  background-color: #273036;
+ display:block;
+ font-size:1.2rem;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+ 
+ 
+  
+}
+
+.washer-btn{
+  text-align:center;
+}
+#booking-form h2{
+  text-align:center;
+  font-family: 'Abril Fatface', cursive;
+  color:#6ab33e ;
+  padding:10px 0px 30px 0px;
+}
+#booking-form p{
+ 
+ 
+  
+  padding:60px 0px 0px 5px;
+}
+#booking-form img{
+  padding-top:10px;
+  border-radius: 3px;
+  width:100%;
+  height:100%;
+}
+.bookform{
+ color:black;
+  padding:15px 2px 20px 2px;
+  border:1px solid black;
+  background-color: white;
+  border-radius:20px;
+  box-shadow: 5px 8px 8px 5px rgba(119, 116, 116, 0.2);
+}
+#washer-info{
+  color:black;
+  padding:60px 10px 10px 10px ;
+  font-size:1.2rem;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  background-color: rgb(237, 244, 245);
+}
+
+#washer-info img{
+  height:100%;
+  width:100%;
+}
+
+/* .washer-info{
+  padding:10px 10px 10px 70px;
+} */
+@media only screen and (max-width: 990px){
+.testimonial{
+padding: 80px 0 80px 265px;
+}
+#washingmachine-header{
+ 
+  
+  height:70vh;
+  background-image:url("https://stylecurator.com.au/wp-content/uploads/2019/11/Grey-and-white-functional-family-laundry-renovation.jpg");
+
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
+}
+#washer-info img{
+  width:100%;
+  height:100%;
+  }
+  .washer-info{
+    padding-top:20px;
+  }
+  #booking-form img{
+    padding:50px 0px 10px 0px;
+    
+    width:100%;
+    height:100%;
+  }
+}
+@media only screen and (max-width: 767px){
+  h1{
+    font-size:3.5rem;
+    line-height: 4rem;
+  }
+  h2{
+    font-size:2.5rem;
+  }
+  p{
+font-size:16px;
+
+  }
+  
+  body{
+    margin-top:-30px;
+    padding:0 !important;
+    /* margin:0 !important; */
+    height:100%;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    
+  }
+  /* navsection */
+  .ssservices{
+    position:fixed;
+    top:2rem;
+    left: 50%;
+    margin-right: -50%;
+    
+    z-index: 4;
+    
+    font-family: Nunito,sans-serif; 
+    text-decoration: none;
+    
+    color: black;
+    
+    transform: translate(-50%, -50%) 
+  }
+  #navbarbackground{
+    position:fixed;
+    top: 0;
+   
+    z-index: 3;
+    background-color: white;
+    height:60px;
+    width:100%;
+    opacity:0.5;
+    
+  }
+  .fix-icon{
+    
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    display: inline;
+    
+  }
+  .navcallicon{
+    color:#6ab33e;
+  }
+  
+  section#home{
+    height:100vh;
+  }
+  
+  .menu-bars {
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .home-text{
+    text-align: center;
+    padding-top: 100px;
+    margin:auto;
+    font-size:16px;
+    line-height: 1.6;
+    
+  }
+  .button{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 0px;
+  }
+  #brands{  
+    color:black;
+  }
+  #brands img{
+    width:110%;
+    height:150%;
+    
+  
+  }
+  #contactus{
+    
+    padding:100px 0px 70px 0px;
+    text-align: center;
+  }
+  .reviews{
+    padding-top:50px;
+    padding-bottom:70px;
+   
+  }
+  .reviews>h2{
+    text-align:center;
+    
+    padding-bottom:50px;
+  }
+.testimonial{
+padding: 0;
+border: none;
+}
+.testimonial:before,
+.testimonial:after{
+border: none;
+}
+.testimonial .pic{
+position: relative;
+top: 0;
+left: 0;
+}
+.testimonial .description{
+margin-top: 5px;
+position:relative;
+top:45px;
+left:0;
+}
+.testimonial .description:before{
+content: "";
+}
+.callback2{
+  padding-top:30px;
+}
+.about-us-text{
+  text-align: center;
+  line-height:1.5;
+ }
+ /* washingmachine page */
+ #bookingform-header{
+ 
+  
+  height:70vh;
+ 
+ 
+
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -150px;
+ 
+  text-align:left;
+ }
+ 
+ #bookingform-header h1{
+   font-size:3rem;
+   padding:250px 10px 20px 10px;
+ }
+ #booking-form{
+  padding:10px 3px 30px 3px;
+ 
+  
+}
+ .bookform{
+   padding:15px 1px 20px 1px;
+ }
+ #booking-form img{
+  padding:50px 0px 10px 0px;
+  
+  width:100%;
+  height:100%;
+}
+#booking-form p{
+  padding:30px 0px 0px 5px;
+  font-size:1.2rem;
+  line-height: 1.8;
+  letter-spacing: 0.07em;
+}
+#washer-info img{
+width:100%;
+height:100%;
+}
+.washer-info{
+  padding-top:20px;
+}
+
+}
+
+
+/* Media Query: Large Smartphone (Vertical) */
